@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="santi"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 11:31:43 AM"/>
+        <attribute name="created" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDItMjA7MTA6Mzk6MDIgQU07Mjg5Ng=="/>
+        <attribute name="edited" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDItMjA7MTE6MzE6NDMgQU07MzszMDA0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="cpb" type="Real" array="False" size=""/>
+            <declare name="subtotal" type="Real" array="False" size=""/>
+            <declare name="ship" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;Please enter the amount of books you want to order.&quot;" newline="True"/>
+            <input variable="qty"/>
+            <output expression="&quot;Please enter the Cost per book.&quot;" newline="True"/>
+            <input variable="cpb"/>
+            <assign variable="subtotal" expression="qty * cpb"/>
+            <if expression="subtotal &gt; 50.00">
+                <then>
+                    <assign variable="ship" expression="0"/>
+                </then>
+                <else>
+                    <assign variable="ship" expression="25"/>
+                </else>
+            </if>
+            <assign variable="total" expression="subtotal + ship"/>
+            <output expression="&quot;The subtotal is:     $&quot; &amp; subtotal" newline="True"/>
+            <output expression="&quot;Shipping fee of:     $&quot; &amp; ship" newline="True"/>
+            <output expression="&quot;The order total is:     $&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

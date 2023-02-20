@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="santi"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 12:13:37 PM"/>
+        <attribute name="created" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDItMjA7MTE6NDc6NDEgQU07Mjg5OQ=="/>
+        <attribute name="edited" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDItMjA7MTI6MTM6MzcgUE07MzszMDIz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="ndep" type="Real" array="False" size=""/>
+            <declare name="gi" type="Real" array="False" size=""/>
+            <declare name="agi" type="Real" array="False" size=""/>
+            <declare name="taxr" type="Real" array="False" size=""/>
+            <declare name="intax" type="Real" array="False" size=""/>
+            <output expression="&quot;Please enter your last name&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Please enter the number of dependents&quot;" newline="True"/>
+            <input variable="ndep"/>
+            <output expression="&quot;Please enter your gross income&quot;" newline="True"/>
+            <input variable="gi"/>
+            <assign variable="agi" expression="gi - ( ndep * 12000)"/>
+            <if expression="agi &gt; 50000">
+                <then>
+                    <assign variable="taxr" expression="0.20"/>
+                </then>
+                <else>
+                    <assign variable="taxr" expression="0.10"/>
+                </else>
+            </if>
+            <assign variable="intax" expression="agi * taxr"/>
+            <if expression="intax &lt;= 0">
+                <then>
+                    <assign variable="intax" expression="100"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;For &quot; &amp; name" newline="True"/>
+            <output expression="&quot;With the gross income of:    $&quot; &amp;gi" newline="True"/>
+            <output expression="&quot;With &quot; &amp;ndep &amp;&quot; dependents.&quot;" newline="True"/>
+            <output expression="&quot;The adjusted gross income is:    $&quot; &amp;agi" newline="True"/>
+            <output expression="&quot;The income tax is:    $&quot; &amp;intax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

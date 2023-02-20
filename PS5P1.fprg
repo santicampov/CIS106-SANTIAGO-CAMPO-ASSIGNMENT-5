@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="santi"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 09:59:33 AM"/>
+        <attribute name="created" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDItMjA7MDk6Mjk6NTkgQU07MjkxNQ=="/>
+        <attribute name="edited" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDItMjA7MDk6NTk6MzMgQU07MzszMDIw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="up" type="Real" array="False" size=""/>
+            <declare name="extpc" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;Please enter the quantity.&quot;" newline="True"/>
+            <input variable="qty"/>
+            <if expression="qty &gt;= 1000">
+                <then>
+                    <assign variable="up" expression="3.00"/>
+                </then>
+                <else>
+                    <assign variable="up" expression="5.00"/>
+                </else>
+            </if>
+            <assign variable="extpc" expression="qty * up"/>
+            <assign variable="tax" expression="extpc * 0.07"/>
+            <assign variable="total" expression="extpc + tax"/>
+            <output expression="&quot;Quantity of units ordered:     &quot; &amp; qty" newline="True"/>
+            <output expression="&quot;Unit price:      $&quot; &amp; up" newline="True"/>
+            <output expression="&quot;Extended Price:     $&quot; &amp; extpc" newline="True"/>
+            <output expression="&quot;Tax:     $&quot; &amp; tax" newline="True"/>
+            <output expression="&quot;Total order:       $&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
